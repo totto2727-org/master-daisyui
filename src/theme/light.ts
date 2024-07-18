@@ -15,7 +15,7 @@ const themeBase = {
   "base-content": "#1f2937",
 } satisfies ThemeBase;
 
-const theme = createTheme("light", themeBase);
+const theme = createTheme("@light", themeBase);
 
 // const variantsUngrouped = convertThemeToCSSVariants(theme);
 

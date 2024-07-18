@@ -19,12 +19,6 @@ app.get("/content", (c) =>
         <title>Hello World!!!</title>
         <link
           rel="preload"
-          as="script"
-          href="https://unpkg.com/htmx.org@2.0.0"
-        />
-        <script src="https://unpkg.com/htmx.org@2.0.0"></script>
-        <link
-          rel="preload"
           as="style"
           href="https://esm.sh/@master/normal.css@rc?css"
         />
@@ -38,10 +32,17 @@ app.get("/content", (c) =>
         />
         <link
           rel="modulepreload"
-          href="https://esm.sh/jsr/@totto/mastercss-daisyui@0.0.3"
+          href="https://esm.sh/jsr/@totto/mastercss-daisyui@0.0.4"
         />
+        <link rel="modulepreload" href="./static/js/master.css.js" />
         <link rel="modulepreload" href="./static/js/init-mastercss.js" />
         <script type="module" src="./static/js/init-mastercss.js"></script>
+        <link
+          rel="preload"
+          as="script"
+          href="https://unpkg.com/htmx.org@2.0.0"
+        />
+        <script src="https://unpkg.com/htmx.org@2.0.0"></script>
       </head>
       <body class="bg:base-100">
         <div class="flex flex-direction:column align-items:center">
