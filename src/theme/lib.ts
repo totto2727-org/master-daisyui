@@ -4,7 +4,7 @@ import {
 } from "../lib.ts";
 
 export type Theme = {
-    "color-scheme": "light" | "dark";
+    "color-scheme": string;
     primary: string;
     secondary: string;
     accent: string;
@@ -26,6 +26,7 @@ export type Theme = {
     "error-content": string;
     "base-content": string;
 };
+
 type RequiredThemeProperties = keyof Pick<
     Theme,
     "color-scheme" | "primary" | "secondary" | "neutral" | "accent"
@@ -51,6 +52,7 @@ export const convertThemeToMasterCss = (theme: Theme): string => {
 };
 
 export const createTheme = (
+    name: string,
     theme: ThemeBase,
 ): Theme => {
     const colorScheme = theme["color-scheme"];
@@ -104,26 +106,26 @@ export const createTheme = (
         generateForegroundColorFrom(base100, 0.8);
 
     return {
-        "color-scheme": colorScheme,
-        primary,
-        secondary,
-        accent,
-        neutral,
-        info,
-        success,
-        warning,
-        error,
-        "base-100": base100,
-        "base-200": base200,
-        "base-300": base300,
-        "primary-content": primaryContent,
-        "secondary-content": secondaryContent,
-        "accent-content": accentContent,
-        "neutral-content": neutralContent,
-        "info-content": infoContent,
-        "success-content": successContent,
-        "warning-content": warningContent,
-        "error-content": errorContent,
-        "base-content": baseContent,
+        "color-scheme": `${colorScheme}@${name}`,
+        primary: `${primary}@${name}`,
+        secondary: `${secondary}@${name}`,
+        accent: `${accent}@${name}`,
+        neutral: `${neutral}@${name}`,
+        info: `${info}@${name}`,
+        success: `${success}@${name}`,
+        warning: `${warning}@${name}`,
+        error: `${error}@${name}`,
+        "base-100": `${base100}@${name}`,
+        "base-200": `${base200}@${name}`,
+        "base-300": `${base300}@${name}`,
+        "primary-content": `${primaryContent}@${name}`,
+        "secondary-content": `${secondaryContent}@${name}`,
+        "accent-content": `${accentContent}@${name}`,
+        "neutral-content": `${neutralContent}@${name}`,
+        "info-content": `${infoContent}@${name}`,
+        "success-content": `${successContent}@${name}`,
+        "warning-content": `${warningContent}@${name}`,
+        "error-content": `${errorContent}@${name}`,
+        "base-content": `${baseContent}@${name}`,
     };
 };

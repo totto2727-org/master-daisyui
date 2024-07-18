@@ -1,29 +1,12 @@
-import { Config } from "@master/css";
-import { Theme } from "./theme.ts";
+import type { Config } from "@master/css";
+import { darkTheme, lightTheme } from "./theme.ts";
 
-export const config = {
+export const config: Config = {
+    extends: [
+        lightTheme,
+        darkTheme,
+    ],
     variables: {
-        "color-scheme": "var(--color-scheme)",
-        primary: "var(--primary)",
-        secondary: "var(--secondary)",
-        accent: "var(--accent)",
-        neutral: "var(--neutral)",
-        info: "var(--info)",
-        success: "var(--success)",
-        warning: "var(--warning)",
-        error: "var(--error)",
-        "base-100": "var(--base-100)",
-        "base-200": "var(--base-200)",
-        "base-300": "var(--base-300)",
-        "primary-content": "var(--primary-content)",
-        "secondary-content": "var(--secondary-content)",
-        "accent-content": "var(--accent-content)",
-        "neutral-content": "var(--neutral-content)",
-        "info-content": "var(--info-content)",
-        "success-content": "var(--success-content)",
-        "warning-content": "var(--warning-content)",
-        "error-content": "var(--error-content)",
-        "base-content": "var(--base-content)",
         "transparent": "var(--transparent, transparent)",
         "current": "var(--current, currentColor)",
         "rounded-box": "var(--rounded-box, 1rem)",

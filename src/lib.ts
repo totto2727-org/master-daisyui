@@ -12,7 +12,7 @@ function oklchToString(input: Oklch) {
     } ${cutNumber(h ?? 0)})`;
 }
 
-export function isDark(color: string) {
+export function isDark(color: string): boolean {
     if (wcagContrast(color, "black") < wcagContrast(color, "white")) {
         return true;
     }
@@ -22,7 +22,7 @@ export function isDark(color: string) {
 export function generateForegroundColorFrom(
     input: string,
     percentage: number,
-) {
+): string {
     const result = interpolate(
         [input, isDark(input) ? "white" : "black"],
         "oklch",
@@ -33,12 +33,11 @@ export function generateForegroundColorFrom(
 export function generateDarkenColorFrom(
     input: string,
     percentage: number,
-) {
+): string {
     const result = interpolate([input, "black"], "oklch")(percentage);
     return oklchToString(result);
 }
 
-export function addGroupSuffix(input: string, suffix: string) {
-    // return `${input}`;
+export function addGroupSuffix(input: string, suffix: string): string {
     return `{${input.replaceAll(" ", ";")}}${suffix}`;
 }

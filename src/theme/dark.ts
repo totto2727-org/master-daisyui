@@ -1,5 +1,6 @@
+import { Config } from "@master/css";
 import { addGroupSuffix } from "../lib.ts";
-import { ThemeBase, convertThemeToMasterCss, createTheme } from "./lib.ts";
+import { convertThemeToMasterCss, createTheme, type ThemeBase } from "./lib.ts";
 
 const themeBase = {
     "color-scheme": "dark",
@@ -14,8 +15,9 @@ const themeBase = {
     "base-content": "#A6ADBB",
 } satisfies ThemeBase;
 
-const theme = createTheme(themeBase);
+const theme = createTheme("dark", themeBase);
 
 const classes = convertThemeToMasterCss(theme);
 
-export const dark = addGroupSuffix(classes, "@dark")
+export const dark:string = addGroupSuffix(classes, "@dark");
+export const darkTheme:Config = { variables: theme };
