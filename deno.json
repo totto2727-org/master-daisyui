@@ -24,5 +24,13 @@
     "@master/css": "npm:@master/css@^2.0.0-rc.44",
     "culori": "npm:culori@^4.0.1",
     "@types/culori": "npm:@types/culori@^2.1.1"
+  },
+  "deploy": {
+    "project": "e69d7516-5a3d-40c7-8413-d4247af630ec",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "demo/main.tsx"
   }
 }
