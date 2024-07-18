@@ -1,4 +1,4 @@
-# hono-mastercss
+<!-- # hono-mastercss
 
 ## Overview
 
@@ -72,4 +72,4 @@ The version is [.mise.toml](./.mise.toml).
 
 ```bash
 deno task precommit
-```
+``` -->
