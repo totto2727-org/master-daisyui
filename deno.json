@@ -1,20 +1,24 @@
 {
-  "name": "@totto/hono-mastercss",
+  "name": "@totto/mastercss-daisyui",
   "version": "0.1.0",
   "lock": false,
   "exclude": [
     "./.history/*"
   ],
   "exports": {
-    ".": "./mod.ts"
-  },
-  "imports": {
-    "@hono/hono": "jsr:@hono/hono@^4.4.12",
-    "@master/css": "npm:@master/css@^2.0.0-rc.44",
-    "@master/css-server": "npm:@master/css-server@^2.0.0-rc.44"
+    ".": "./mod.ts",
+    "./theme": "./src/theme.ts",
+    "./theme/*": "./src/*.ts",
+    "./component": "./component.ts",
+    "./component/*": "./component/*.ts",
+    "./global": "./src/global.ts"
   },
   "tasks": {
-    "demo": "deno run --allow-all demo/main.tsx",
+    "demo": "deno run --watch --allow-read --allow-net demo/main.tsx",
     "precommit": "deno check *.ts && deno lint && deno fmt && deno test"
+  },
+  "imports": {
+    "@master/css": "npm:@master/css@^2.0.0-rc.44",
+    "culori": "npm:culori@^4.0.1"
   }
 }
