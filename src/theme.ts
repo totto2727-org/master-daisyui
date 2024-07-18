@@ -1,2 +1,2 @@
-export { darkConfig, darkVariants } from "./theme/dark.ts";
-export { lightConfig, lightVariants } from "./theme/light.ts";
+export { darkConfig } from "./theme/dark.ts";
+export { lightConfig } from "./theme/light.ts";
