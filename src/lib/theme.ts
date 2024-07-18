@@ -18,8 +18,6 @@ export const createTheme = (
   name: string,
   theme: ThemeBase,
 ): Theme => {
-  const colorScheme = theme["color-scheme"];
-
   const primary = theme.primary;
   const secondary = theme.secondary;
   const accent = theme.accent;
@@ -69,7 +67,6 @@ export const createTheme = (
     generateForegroundColorFrom(base100, 0.8);
 
   return {
-    "color-scheme": `${colorScheme}@${name}`,
     primary: `${primary}@${name}`,
     secondary: `${secondary}@${name}`,
     accent: `${accent}@${name}`,

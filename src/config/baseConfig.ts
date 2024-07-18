@@ -23,5 +23,15 @@ const theme: Config["variables"] = {
 };
 
 export const baseConfig: Config = {
+  defaultMode: "light",
+  modes: {
+    light: "media",
+    dark: "media",
+  },
   variables: theme,
+  utilities: {
+    "color-scheme": {
+      "color-scheme": "light dark",
+    },
+  },
 } satisfies Config;

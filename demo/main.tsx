@@ -3,28 +3,25 @@
 import { Hono } from "jsr:@hono/hono@4.5.0";
 import { logger } from "jsr:@hono/hono@4.5.0/logger";
 import { serveStatic } from "jsr:@hono/hono@4.5.0/deno";
-import { cache } from "jsr:@hono/hono@4.5.0/cache";
 import { masterCssMiddleware } from "jsr:@totto/hono-mastercss@0.2.0";
 import * as path from "jsr:@std/path@1.0.0";
 
-import masterDaisyUi from "../mod.ts";
 import config from "./static/js/master.css.js";
 
 const app = new Hono();
 
 app.use(logger());
 
-app.use(
-  "/content",
-  masterCssMiddleware({
-    ...masterDaisyUi,
-    ...config,
-  }),
-);
+// app.use(
+//   "/content",
+//   masterCssMiddleware(config),
+// );
 
 app.get("/content", (c) =>
   c.html(
-    <html>
+    // Temporarily hidden for the first time because the middleware cannot properly CSS and output.
+    // It outputs as @media@media
+    <html class="color-scheme" style="display:none">
       <head>
         <meta charset="utf-8" />
         <title>Hello World!!!</title>
@@ -45,7 +42,11 @@ app.get("/content", (c) =>
         />
         <link
           rel="modulepreload"
-          href="https://esm.sh/@master/css-runtime@rc"
+          href="https://esm.sh/@master/css-runtime@2.0.0-rc.44"
+        />
+        <link
+          rel="modulepreload"
+          href="https://esm.sh/jsr/@totto/mastercss-daisyui@0.0.1"
         />
         <link rel="modulepreload" href="./static/js/init-mastercss.js" />
         <script type="module" src="./static/js/init-mastercss.js"></script>
@@ -73,17 +74,18 @@ app.get("/content", (c) =>
 
 app.get(
   "/api/content",
-  (c) => c.html(<div class="fg:red">Dynamic Style!!!</div>),
+  (c) => c.html(<div class="fg:transparent">Dynamic Style!!!</div>),
 );
+//
+// app.use(
+//   "/static/*",
+//   cache({
+//     cacheName: "static",
+//     cacheControl: "max-age=86400",
+//     wait: true,
+//   }),
+// );
 
-app.use(
-  "/static/*",
-  cache({
-    cacheName: "static",
-    cacheControl: "max-age=86400",
-    wait: true,
-  }),
-);
 app.use(
   "/static/*",
   serveStatic({

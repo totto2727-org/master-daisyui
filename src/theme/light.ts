@@ -1,10 +1,8 @@
 import type { Config } from "@master/css";
-import { addGroupSuffix } from "../lib/color.ts";
-import { convertThemeToCSSVariants, createTheme } from "../lib/theme.ts";
+import { createTheme } from "../lib/theme.ts";
 import type { ThemeBase } from "../type.ts";
 
 const themeBase = {
-  "color-scheme": "light",
   primary: "oklch(49.12% 0.3096 275.75)",
   secondary: "oklch(69.71% 0.329 342.55)",
   "secondary-content": "oklch(98.71% 0.0106 342.55)",

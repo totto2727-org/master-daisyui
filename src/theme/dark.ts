@@ -3,7 +3,6 @@ import { createTheme } from "../lib/theme.ts";
 import type { ThemeBase } from "../type.ts";
 
 const themeBase = {
-  "color-scheme": "dark",
   "primary": "oklch(65.69% 0.196 275.75)",
   "secondary": "oklch(74.8% 0.26 342.55)",
   "accent": "oklch(74.51% 0.167 183.61)",

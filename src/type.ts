@@ -1,5 +1,4 @@
 export type Theme = {
-  "color-scheme": string;
   primary: string;
   secondary: string;
   accent: string;
@@ -24,7 +23,7 @@ export type Theme = {
 
 type RequiredThemeProperties = keyof Pick<
   Theme,
-  "color-scheme" | "primary" | "secondary" | "neutral" | "accent"
+  "primary" | "secondary" | "neutral" | "accent"
 >;
 
 export type ThemeBase =
