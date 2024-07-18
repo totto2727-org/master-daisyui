@@ -13,7 +13,7 @@
     "./theme/light": "./src/theme/light.ts",
     "./theme/dark": "./src/theme/dark.ts",
     "./component": "./src/component.ts",
-    "./config/base": "./src/config/base.ts",
+    "./config/baseConfig": "./src/config/baseConfig.ts",
     "./config/allConfig": "./src/config/allConfig.ts"
   },
   "tasks": {
