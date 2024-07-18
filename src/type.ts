@@ -1,31 +1,31 @@
 import { VariableDefinitions } from "@master/css";
 
 export type Theme = {
-  primary: VariableDefinitions;
-  secondary: VariableDefinitions;
-  accent: VariableDefinitions;
-  neutral: VariableDefinitions;
-  info: VariableDefinitions;
-  success: VariableDefinitions;
-  warning: VariableDefinitions;
-  error: VariableDefinitions;
-  "base-100": VariableDefinitions;
-  "base-200": VariableDefinitions;
-  "base-300": VariableDefinitions;
-  "primary-content": VariableDefinitions;
-  "secondary-content": VariableDefinitions;
-  "accent-content": VariableDefinitions;
-  "neutral-content": VariableDefinitions;
-  "info-content": VariableDefinitions;
-  "success-content": VariableDefinitions;
-  "warning-content": VariableDefinitions;
-  "error-content": VariableDefinitions;
-  "base-content": VariableDefinitions;
+  "d-primary": VariableDefinitions;
+  "d-secondary": VariableDefinitions;
+  "d-accent": VariableDefinitions;
+  "d-neutral": VariableDefinitions;
+  "d-info": VariableDefinitions;
+  "d-success": VariableDefinitions;
+  "d-warning": VariableDefinitions;
+  "d-error": VariableDefinitions;
+  "d-base-100": VariableDefinitions;
+  "d-base-200": VariableDefinitions;
+  "d-base-300": VariableDefinitions;
+  "d-primary-content": VariableDefinitions;
+  "d-secondary-content": VariableDefinitions;
+  "d-accent-content": VariableDefinitions;
+  "d-neutral-content": VariableDefinitions;
+  "d-info-content": VariableDefinitions;
+  "d-success-content": VariableDefinitions;
+  "d-warning-content": VariableDefinitions;
+  "d-error-content": VariableDefinitions;
+  "d-base-content": VariableDefinitions;
 };
 
 type RequiredThemeProperties = keyof Pick<
   Theme,
-  "primary" | "secondary" | "neutral" | "accent"
+  "d-primary" | "d-secondary" | "d-neutral" | "d-accent"
 >;
 
 export type ThemeBase =
