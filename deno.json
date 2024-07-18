@@ -1,17 +1,20 @@
 {
   "name": "@totto/mastercss-daisyui",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "lock": false,
   "exclude": [
-    "./.history/*"
+    "**/.history/*"
   ],
   "exports": {
     ".": "./mod.ts",
+    "./lib": "./src/lib.ts",
+    "./type": "./src/type.ts",
     "./theme": "./src/theme.ts",
-    "./theme/*": "./src/*.ts",
-    "./component": "./component.ts",
-    "./component/*": "./component/*.ts",
-    "./global": "./src/global.ts"
+    "./theme/light": "./src/theme/light.ts",
+    "./theme/dark": "./src/theme/dark.ts",
+    "./component": "./src/component.ts",
+    "./config/base": "./src/config/base.ts",
+    "./config/allConfig": "./src/config/allConfig.ts"
   },
   "tasks": {
     "demo": "deno run --watch --allow-read --allow-net demo/main.tsx",
@@ -19,6 +22,7 @@
   },
   "imports": {
     "@master/css": "npm:@master/css@^2.0.0-rc.44",
-    "culori": "npm:culori@^4.0.1"
+    "culori": "npm:culori@^4.0.1",
+    "@types/culori": "npm:@types/culori@^2.1.1"
   }
 }

@@ -1,3 +1,3 @@
-import { config } from "./src/config.ts";
+import { allConfig } from "./src/config/allConfig.ts";
 
-export default config;
+export default allConfig;
