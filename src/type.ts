@@ -1,24 +1,26 @@
+import { VariableDefinitions } from "@master/css";
+
 export type Theme = {
-  primary: string;
-  secondary: string;
-  accent: string;
-  neutral: string;
-  info: string;
-  success: string;
-  warning: string;
-  error: string;
-  "base-100": string;
-  "base-200": string;
-  "base-300": string;
-  "primary-content": string;
-  "secondary-content": string;
-  "accent-content": string;
-  "neutral-content": string;
-  "info-content": string;
-  "success-content": string;
-  "warning-content": string;
-  "error-content": string;
-  "base-content": string;
+  primary: VariableDefinitions;
+  secondary: VariableDefinitions;
+  accent: VariableDefinitions;
+  neutral: VariableDefinitions;
+  info: VariableDefinitions;
+  success: VariableDefinitions;
+  warning: VariableDefinitions;
+  error: VariableDefinitions;
+  "base-100": VariableDefinitions;
+  "base-200": VariableDefinitions;
+  "base-300": VariableDefinitions;
+  "primary-content": VariableDefinitions;
+  "secondary-content": VariableDefinitions;
+  "accent-content": VariableDefinitions;
+  "neutral-content": VariableDefinitions;
+  "info-content": VariableDefinitions;
+  "success-content": VariableDefinitions;
+  "warning-content": VariableDefinitions;
+  "error-content": VariableDefinitions;
+  "base-content": VariableDefinitions;
 };
 
 type RequiredThemeProperties = keyof Pick<
@@ -27,13 +29,5 @@ type RequiredThemeProperties = keyof Pick<
 >;
 
 export type ThemeBase =
-  & Pick<
-    Theme,
-    RequiredThemeProperties
-  >
-  & Partial<
-    Omit<
-      Theme,
-      RequiredThemeProperties
-    >
-  >;
+  & Pick<Record<keyof Theme, string>, RequiredThemeProperties>
+  & Partial<Omit<Record<keyof Theme, string>, RequiredThemeProperties>>;

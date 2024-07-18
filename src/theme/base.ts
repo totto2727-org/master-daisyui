@@ -2,7 +2,7 @@ import type { Theme } from "../type.ts";
 
 export const baseTheme: Required<
   Pick<
-    Theme,
+    Record<keyof Theme, string>,
     | "info"
     | "success"
     | "warning"
