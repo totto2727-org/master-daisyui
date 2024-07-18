@@ -1,24 +1,26 @@
-<!-- # hono-mastercss
+# master-daisyui
 
-## Overview
+![daisyui:v4.12.10](https://img.shields.io/badge/daisyui-v4.12.10-%237582ff)
+
+<!-- ## Overview
 
 Middleware for pre-rendering Master CSS in Hono.
 
 - 0 client-side JavaScript required for initial rendering.
   - No need to wait for @master/css-runtime to be generated for the first time.
   - Of course, when used in conjunction with @master/css-runtime, it can also be
-    used for Web Application using HTMX, etc!
+    used for Web Application using HTMX, etc! -->
 
 ## Installation
 
 ```bash
-npx jsr add @totto/hono-mastercss
-yarn dlx jsr add @totto/hono-mastercss
-pnpx jsr add @totto/hono-mastercss
-bux jsr add @totto/hono-mastercss
+npx jsr add @totto/master-daisyui
+yarn dlx jsr add @totto/master-daisyui
+pnpx jsr add @totto/master-daisyui
+bux jsr add @totto/master-daisyui
 ```
 
-## Usage
+<!-- ## Usage
 
 [demo](./demo/main.tsx)
 
