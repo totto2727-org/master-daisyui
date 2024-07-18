@@ -3,19 +3,11 @@
 import { Hono } from "jsr:@hono/hono@4.5.0";
 import { logger } from "jsr:@hono/hono@4.5.0/logger";
 import { serveStatic } from "jsr:@hono/hono@4.5.0/deno";
-import { masterCssMiddleware } from "jsr:@totto/hono-mastercss@0.2.0";
 import * as path from "jsr:@std/path@1.0.0";
-
-import config from "./static/js/master.css.js";
 
 const app = new Hono();
 
 app.use(logger());
-
-// app.use(
-//   "/content",
-//   masterCssMiddleware(config),
-// );
 
 app.get("/content", (c) =>
   c.html(
@@ -46,7 +38,7 @@ app.get("/content", (c) =>
         />
         <link
           rel="modulepreload"
-          href="https://esm.sh/jsr/@totto/mastercss-daisyui@0.0.1"
+          href="https://esm.sh/jsr/@totto/mastercss-daisyui@0.0.3"
         />
         <link rel="modulepreload" href="./static/js/init-mastercss.js" />
         <script type="module" src="./static/js/init-mastercss.js"></script>
@@ -76,15 +68,6 @@ app.get(
   "/api/content",
   (c) => c.html(<div class="fg:transparent">Dynamic Style!!!</div>),
 );
-//
-// app.use(
-//   "/static/*",
-//   cache({
-//     cacheName: "static",
-//     cacheControl: "max-age=86400",
-//     wait: true,
-//   }),
-// );
 
 app.use(
   "/static/*",
